@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thriftybeachessb.com/sitemap.xml
+Sitemap: https://thrifty-beaches-santa-barbara.vercel.app/sitemap.xml
