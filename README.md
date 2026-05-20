@@ -1,6 +1,6 @@
 # Thrifty Beaches Santa Barbara
 
-Single-page landing site for Thrifty Beaches Santa Barbara — vintage clothing and mid-century furniture at 710 State Street.
+Single-page landing site for Thrifty Beaches Santa Barbara — hand-picked vintage clothing at 710 State Street.
 
 ## Run it
 
@@ -25,12 +25,6 @@ No build step. Just open `index.html` in a browser, or serve the folder with any
 | `images/thriftybeachessb-shelves.webp` | About section primary image |
 | `images/state-street-pano.webp` | Visit section background |
 
-## Drop-in checklist for pending assets
-
-| File | Purpose | Recommended dimensions |
-| --- | --- | --- |
-| `images/furniture.jpg` | About section inset image (currently broken). | Square, ~600×600 |
-
 ## Tech
 
 - Tailwind CSS via CDN (`tailwind.config` is inlined in `index.html` so the CDN picks it up)
@@ -43,6 +37,5 @@ The desktop layout is preserved; every mobile-specific behavior is scoped to wid
 
 - **Hamburger menu** — a `md:hidden` button in the header opens a full-screen overlay (`#mobile-menu`) with About / Visit / Call / Instagram links. Toggle, body scroll lock, and Escape/resize-to-close are handled in `script.js`.
 - **Sticky bottom action bar** — `md:hidden` fixed bar at the bottom with Call / Directions / Instagram. Uses `env(safe-area-inset-bottom)` for notched devices.
-- **Embedded map** — `#mobile-map` is hydrated with a Google Maps iframe only when `matchMedia('(max-width: 767px)')` matches, so desktop never fetches it.
 - **Hero** — uses `100dvh` on mobile (true fullscreen, respects browser chrome) and `90vh` on desktop.
 - **Touch states** — Visit cards include `active:` variants alongside `hover:` so taps feel responsive.

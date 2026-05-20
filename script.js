@@ -48,35 +48,3 @@ document.getElementById('year').textContent = new Date().getFullYear();
         desktopMq.addListener(handleMqChange);
     }
 })();
-
-(function mobileMap() {
-    const mount = document.getElementById('mobile-map');
-    if (!mount) return;
-    const src = mount.getAttribute('data-map-src');
-    if (!src) return;
-
-    const mobileMq = window.matchMedia('(max-width: 767px)');
-    let injected = false;
-
-    function inject() {
-        if (injected || !mobileMq.matches) return;
-        const iframe = document.createElement('iframe');
-        iframe.src = src;
-        iframe.loading = 'lazy';
-        iframe.referrerPolicy = 'no-referrer-when-downgrade';
-        iframe.title = 'Map to 710 State Street';
-        iframe.className = 'w-full h-full border-0';
-        iframe.setAttribute('allowfullscreen', '');
-        mount.appendChild(iframe);
-        injected = true;
-    }
-
-    inject();
-
-    const handle = (e) => { if (e.matches) inject(); };
-    if (mobileMq.addEventListener) {
-        mobileMq.addEventListener('change', handle);
-    } else if (mobileMq.addListener) {
-        mobileMq.addListener(handle);
-    }
-})();

@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thrifty Beaches Santa Barbara | Vintage is the Future</title>
-    <meta name="description" content="Buy. Sell. Trade. Santa Barbara's largest curated vintage shop. Vintage clothing and mid-century furniture.">
+    <title>Thrifty Beaches Santa Barbara | Vintage Clothing on State Street</title>
+    <meta name="description" content="Hand-picked vintage clothing in Santa Barbara. Buy, sell, trade. New finds every week at Thrifty Beaches, 710 State Street.">
+    <link rel="canonical" href="https://thriftybeachessb.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <meta name="theme-color" content="#1A1A1A">
+
+    <!-- Open Graph / Facebook / iMessage -->
+    <meta property="og:type" content="business.business">
+    <meta property="og:site_name" content="Thrifty Beaches Santa Barbara">
+    <meta property="og:title" content="Thrifty Beaches Santa Barbara | Vintage Clothing on State Street">
+    <meta property="og:description" content="Hand-picked vintage clothing in Santa Barbara. Buy, sell, trade. New finds every week at Thrifty Beaches, 710 State Street.">
+    <meta property="og:url" content="https://thriftybeachessb.com/">
+    <meta property="og:image" content="https://thriftybeachessb.com/images/thrifty-beaches-hero-interior.webp">
+    <meta property="og:image:alt" content="The interior of Thrifty Beaches Santa Barbara — racks of curated vintage clothing.">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thrifty Beaches Santa Barbara | Vintage Clothing on State Street">
+    <meta name="twitter:description" content="Hand-picked vintage clothing in Santa Barbara. Buy, sell, trade. New finds every week at Thrifty Beaches, 710 State Street.">
+    <meta name="twitter:image" content="https://thriftybeachessb.com/images/thrifty-beaches-hero-interior.webp">
+
+    <!-- Preload LCP hero image (rendered as a CSS background) -->
+    <link rel="preload" as="image" href="images/thrifty-beaches-hero-interior.webp" fetchpriority="high">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,12 +53,63 @@
         }
     </script>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- LocalBusiness structured data (helps Google show address, hours, phone in SERPs / Maps) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "@id": "https://thriftybeachessb.com/#store",
+      "name": "Thrifty Beaches Santa Barbara",
+      "alternateName": "Thrifty Beaches",
+      "description": "Hand-picked vintage clothing in Santa Barbara. Buy, sell, and trade. New finds every week at Thrifty Beaches, 710 State Street.",
+      "url": "https://thriftybeachessb.com/",
+      "image": "https://thriftybeachessb.com/images/thrifty-beaches-hero-interior.webp",
+      "telephone": "+1-805-892-0943",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "710 State Street",
+        "addressLocality": "Santa Barbara",
+        "addressRegion": "CA",
+        "postalCode": "93101",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.4194,
+        "longitude": -119.6987
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "11:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Friday", "Saturday"],
+          "opens": "11:00",
+          "closes": "21:00"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/thriftybeaches.sb"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Santa Barbara"
+      }
+    }
+    </script>
 </head>
 <body class="font-sans bg-sand text-ocean antialiased selection:bg-gold selection:text-white">
 
     <!-- Navigation (Simple sticky header) -->
     <header class="fixed w-full top-0 z-50 bg-ocean/95 backdrop-blur-xl backdrop-saturate-150 border-b border-gold/20 shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
         <div class="max-w-6xl mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
+            <span class="md:hidden w-11 h-11 -ml-2" aria-hidden="true"></span>
             <a href="#" class="flex flex-col items-center font-serif font-bold text-xl md:text-2xl tracking-wide text-sand leading-tight">
                 <!-- TODO: once assets/logo.svg exists, uncomment the <img> below and remove (or hide) the text wordmark -->
                 <!-- <img src="assets/logo.svg" alt="Thrifty Beaches Santa Barbara" class="h-8 w-auto mr-3"> -->
@@ -57,9 +133,10 @@
     </header>
 
     <!-- Mobile Menu Overlay (mobile-only) -->
-    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[60] bg-ocean/98 backdrop-blur-xl hidden flex-col" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[60] bg-ocean hidden flex-col" role="dialog" aria-modal="true" aria-label="Mobile navigation">
         <div class="flex justify-between items-center px-6 py-3 border-b border-gold/15">
-            <a href="#" class="mobile-menu-link flex flex-col items-start font-serif font-bold text-xl tracking-wide text-sand leading-tight">
+            <span class="w-11 h-11 -ml-2" aria-hidden="true"></span>
+            <a href="#" class="mobile-menu-link flex flex-col items-center font-serif font-bold text-xl tracking-wide text-sand leading-tight">
                 <span>THRIFTY BEACHES</span>
                 <span class="font-sans text-[0.6rem] font-semibold tracking-[0.25em] text-gold uppercase mt-1">— Santa Barbara —</span>
             </a>
@@ -79,13 +156,13 @@
                 <span class="font-serif text-4xl font-bold text-sand">Visit</span>
                 <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">02</span>
             </a>
-            <a href="tel:+18058920943" class="mobile-menu-link group flex items-baseline justify-between py-5 border-b border-sand/10">
-                <span class="font-serif text-4xl font-bold text-sand">Call</span>
-                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">(805) 892-0943</span>
+            <a href="tel:+18058920943" class="mobile-menu-link group flex flex-col py-5 border-b border-sand/10">
+                <span class="font-serif text-4xl font-bold text-sand leading-tight">Call</span>
+                <span class="mt-2 text-lg font-semibold tabular-nums tracking-wide text-gold/80 group-active:text-gold transition-colors">(805) 892-0943</span>
             </a>
-            <a href="https://instagram.com/thriftybeaches.sb" target="_blank" rel="noopener noreferrer" class="mobile-menu-link group flex items-baseline justify-between py-5">
-                <span class="font-serif text-4xl font-bold text-sand">Instagram</span>
-                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">@thriftybeaches.sb</span>
+            <a href="https://instagram.com/thriftybeaches.sb" target="_blank" rel="noopener noreferrer" class="mobile-menu-link group flex flex-col py-5">
+                <span class="font-serif text-4xl font-bold text-sand leading-tight">Instagram</span>
+                <span class="mt-2 text-lg font-semibold tracking-wide text-gold/80 group-active:text-gold transition-colors break-words">@thriftybeaches.sb</span>
             </a>
         </nav>
         <div class="px-8 pb-10 pt-6 text-center">
@@ -93,6 +170,8 @@
             <p class="text-sm text-sand/60 font-light">710 State Street, Santa Barbara</p>
         </div>
     </div>
+
+    <main>
 
     <!-- HERO SECTION -->
     <section class="hero-interior relative min-h-[100dvh] md:min-h-[90vh] flex items-center justify-center pt-24 max-md:pb-28 md:pb-0 overflow-hidden bg-cover bg-no-repeat" style="background-image: url('images/thrifty-beaches-hero-interior.webp');">
@@ -139,19 +218,19 @@
                 <!-- Image -->
                 <div class="lg:col-span-5">
                     <div class="aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden bg-sage relative group">
-                        <img src="images/thriftybeachessb-shelves.webp" alt="Curated vintage shelves at Thrifty Beaches Santa Barbara" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="images/thriftybeachessb-shelves.webp" alt="Curated vintage shelves at Thrifty Beaches Santa Barbara" width="1085" height="1450" loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <div class="absolute inset-0 bg-ocean/10 mix-blend-overlay"></div>
                     </div>
                 </div>
 
                 <!-- Text Content -->
                 <div class="lg:col-span-7 lg:pl-4">
-                    <h2 class="text-sm font-bold tracking-[0.3em] text-gold uppercase mb-4">Who We Are</h2>
-                    <h3 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-ocean leading-[1.1]">
+                    <p class="text-xs md:text-sm font-semibold tracking-[0.3em] text-gold uppercase mb-4">Who We Are</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-ocean leading-[1.1]">
                         10,000 square feet of
                         <span class="italic text-sage">hand-picked</span>
                         <span class="text-sage">vintage.</span>
-                    </h3>
+                    </h2>
 
                     <div class="space-y-6 text-lg text-ocean/80 font-light leading-relaxed">
                         <p>
@@ -208,9 +287,6 @@
                     Bring something to trade, or just come browse the racks.
                 </p>
             </div>
-
-            <!-- Mobile map (lazy-injected by script.js) -->
-            <div id="mobile-map" class="md:hidden mb-6 max-w-5xl mx-auto rounded-2xl overflow-hidden ring-1 ring-sand/20 shadow-xl shadow-ocean/40 aspect-[4/3] bg-ocean/60" data-map-src="https://www.google.com/maps?q=710+State+Street,+Santa+Barbara,+CA+93101&output=embed" aria-label="Map to 710 State Street"></div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
 
@@ -278,6 +354,8 @@
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-ocean border-t border-sand/10 text-sand py-8 max-md:pb-24 text-center">
