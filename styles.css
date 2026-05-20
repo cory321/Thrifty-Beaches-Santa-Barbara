@@ -1,0 +1,73 @@
+/* Custom styles for elements that need specific background treatments or animations */
+.hero-pattern {
+    background-color: #F4F1EA;
+    background-image: radial-gradient(#8A9A86 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+.hero-interior {
+    background-position: center 35%;
+}
+
+/* Mobile-only refinements — desktop is untouched */
+@media (max-width: 767px) {
+    /* Reserve space for the sticky bottom action bar, with safe-area for notched phones */
+    .mobile-action-bar {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    /* Scroll cue chevron at the bottom of the hero */
+    .scroll-cue {
+        animation: bob 2.2s ease-in-out infinite;
+    }
+
+    @keyframes bob {
+        0%, 100% { transform: translate(-50%, 0); opacity: 0.55; }
+        50%      { transform: translate(-50%, 8px); opacity: 1; }
+    }
+
+    /* Mobile menu open/close transitions */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    #mobile-menu.is-open {
+        display: flex;
+        animation: menuFadeIn 220ms ease-out both;
+    }
+
+    #mobile-menu .mobile-menu-link {
+        animation: menuLinkIn 360ms ease-out both;
+        animation-delay: 120ms;
+    }
+    #mobile-menu .mobile-menu-link:nth-child(2) { animation-delay: 180ms; }
+    #mobile-menu .mobile-menu-link:nth-child(3) { animation-delay: 240ms; }
+    #mobile-menu .mobile-menu-link:nth-child(4) { animation-delay: 300ms; }
+
+    @keyframes menuFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    @keyframes menuLinkIn {
+        from { opacity: 0; transform: translateY(12px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+}

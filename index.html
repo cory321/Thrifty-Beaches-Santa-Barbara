@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrifty Beaches Santa Barbara | Vintage is the Future</title>
+    <meta name="description" content="Buy. Sell. Trade. Santa Barbara's largest curated vintage shop. Vintage clothing and mid-century furniture.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'sand': '#F4F1EA',
+                        'ocean': '#1A1A1A',
+                        'sage': '#4F6B57',
+                        'gold': '#C9A84C'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-sand text-ocean antialiased selection:bg-gold selection:text-white">
+
+    <!-- Navigation (Simple sticky header) -->
+    <header class="fixed w-full top-0 z-50 bg-ocean/95 backdrop-blur-xl backdrop-saturate-150 border-b border-gold/20 shadow-[0_4px_24px_rgba(0,0,0,0.45)]">
+        <div class="max-w-6xl mx-auto px-6 py-3 md:py-4 flex justify-between items-center">
+            <a href="#" class="flex flex-col items-center font-serif font-bold text-xl md:text-2xl tracking-wide text-sand leading-tight">
+                <!-- TODO: once assets/logo.svg exists, uncomment the <img> below and remove (or hide) the text wordmark -->
+                <!-- <img src="assets/logo.svg" alt="Thrifty Beaches Santa Barbara" class="h-8 w-auto mr-3"> -->
+                <span>THRIFTY BEACHES</span>
+                <span class="font-sans text-[0.65rem] md:text-xs font-semibold tracking-[0.25em] text-gold uppercase mt-1">— Santa Barbara —</span>
+            </a>
+            <nav class="hidden md:flex gap-8 text-sm font-semibold tracking-wide text-gold">
+                <a href="#about" class="hover:text-sand transition-colors">ABOUT</a>
+                <a href="#visit" class="hover:text-sand transition-colors">VISIT</a>
+            </nav>
+            <button id="mobile-menu-button" type="button" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false"
+                class="md:hidden inline-flex items-center justify-center w-11 h-11 -mr-2 text-gold active:bg-gold/10 rounded-full transition-colors">
+                <svg class="menu-icon-open w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"></path>
+                </svg>
+                <svg class="menu-icon-close w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay (mobile-only) -->
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[60] bg-ocean/98 backdrop-blur-xl hidden flex-col" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+        <div class="flex justify-between items-center px-6 py-3 border-b border-gold/15">
+            <a href="#" class="mobile-menu-link flex flex-col items-start font-serif font-bold text-xl tracking-wide text-sand leading-tight">
+                <span>THRIFTY BEACHES</span>
+                <span class="font-sans text-[0.6rem] font-semibold tracking-[0.25em] text-gold uppercase mt-1">— Santa Barbara —</span>
+            </a>
+            <button id="mobile-menu-close" type="button" aria-label="Close menu"
+                class="inline-flex items-center justify-center w-11 h-11 -mr-2 text-gold active:bg-gold/10 rounded-full transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"></path>
+                </svg>
+            </button>
+        </div>
+        <nav class="flex-1 flex flex-col justify-center px-8 gap-2">
+            <a href="#about" class="mobile-menu-link group flex items-baseline justify-between py-5 border-b border-sand/10">
+                <span class="font-serif text-4xl font-bold text-sand">About</span>
+                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">01</span>
+            </a>
+            <a href="#visit" class="mobile-menu-link group flex items-baseline justify-between py-5 border-b border-sand/10">
+                <span class="font-serif text-4xl font-bold text-sand">Visit</span>
+                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">02</span>
+            </a>
+            <a href="tel:+18058920943" class="mobile-menu-link group flex items-baseline justify-between py-5 border-b border-sand/10">
+                <span class="font-serif text-4xl font-bold text-sand">Call</span>
+                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">(805) 892-0943</span>
+            </a>
+            <a href="https://instagram.com/thriftybeaches.sb" target="_blank" rel="noopener noreferrer" class="mobile-menu-link group flex items-baseline justify-between py-5">
+                <span class="font-serif text-4xl font-bold text-sand">Instagram</span>
+                <span class="text-xs font-semibold tracking-[0.3em] uppercase text-gold/70 group-active:text-gold transition-colors">@thriftybeaches.sb</span>
+            </a>
+        </nav>
+        <div class="px-8 pb-10 pt-6 text-center">
+            <p class="text-xs font-semibold tracking-[0.3em] uppercase text-gold mb-2">Buy · Sell · Trade</p>
+            <p class="text-sm text-sand/60 font-light">710 State Street, Santa Barbara</p>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero-interior relative min-h-[100dvh] md:min-h-[90vh] flex items-center justify-center pt-24 max-md:pb-28 md:pb-0 overflow-hidden bg-cover bg-no-repeat" style="background-image: url('images/thrifty-beaches-hero-interior.webp');">
+
+        <!-- Darken photo + anchor legibility where the copy sits -->
+        <div class="absolute inset-0 bg-ocean/25"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ocean/90 via-ocean/55 to-transparent"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_75%,rgba(26,26,26,0.5),transparent)]"></div>
+
+        <div class="relative z-10 max-w-4xl md:max-w-5xl lg:max-w-6xl mx-auto px-6 text-center">
+            <p class="text-xs md:text-sm lg:text-base font-semibold tracking-[0.3em] uppercase text-gold mb-4 md:mb-6 fade-in-up">Buy · Sell · Trade</p>
+
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6 md:mb-8 text-sand drop-shadow-md fade-in-up delay-100">
+                Vintage is the <span class="italic text-gold">future.</span>
+            </h1>
+
+            <p class="text-base md:text-2xl font-light text-sand/85 max-w-2xl md:max-w-3xl mx-auto mb-10 md:mb-12 fade-in-up delay-200">
+                <span class="font-semibold text-gold">The Vault</span> — hand-picked vintage clothing, restocked weekly on State Street.
+            </p>
+
+            <div class="fade-in-up delay-300 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#visit" class="inline-flex items-center justify-center max-md:w-full px-8 py-4 md:px-10 md:py-5 md:text-lg bg-gold text-ocean font-semibold rounded-full hover:bg-sand transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-ocean/40">
+                    Plan Your Visit
+                    <svg class="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile scroll cue -->
+        <a href="#about" aria-label="Scroll to about" class="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-10 text-sand/70 scroll-cue">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-16 md:py-32 bg-[#FBFAF5] relative overflow-hidden">
+        <div aria-hidden="true" class="pointer-events-none absolute -top-20 -right-24 w-96 h-96 bg-sage/15 rounded-full blur-3xl"></div>
+        <div aria-hidden="true" class="pointer-events-none absolute -bottom-32 -left-24 w-80 h-80 bg-gold/10 rounded-full blur-3xl"></div>
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+                <!-- Image -->
+                <div class="lg:col-span-5">
+                    <div class="aspect-[3/4] md:aspect-[4/5] rounded-2xl overflow-hidden bg-sage relative group">
+                        <img src="images/thriftybeachessb-shelves.webp" alt="Curated vintage shelves at Thrifty Beaches Santa Barbara" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-ocean/10 mix-blend-overlay"></div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 lg:pl-4">
+                    <h2 class="text-sm font-bold tracking-[0.3em] text-gold uppercase mb-4">Who We Are</h2>
+                    <h3 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-ocean leading-[1.1]">
+                        10,000 square feet of
+                        <span class="italic text-sage">hand-picked</span>
+                        <span class="text-sage">vintage.</span>
+                    </h3>
+
+                    <div class="space-y-6 text-lg text-ocean/80 font-light leading-relaxed">
+                        <p>
+                            Thrifty Beaches Santa Barbara fills the old Restoration Hardware space on State Street. Denim, leather, tees, jackets, and the occasional thing you've never seen before. New finds hit the racks every week.
+                        </p>
+                        <p class="text-ocean font-normal">
+                            Bring us your closet. We'll see what we can do.
+                        </p>
+                    </div>
+
+                    <!-- Stats lockup -->
+                    <dl class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 border-y border-sage/30 py-6">
+                        <div>
+                            <dt class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-sage mb-1">Square Feet</dt>
+                            <dd class="text-2xl md:text-3xl font-bold text-ocean tabular-nums">10,000</dd>
+                        </div>
+                        <div class="border-l border-sage/30 pl-6">
+                            <dt class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-sage mb-1">Drops</dt>
+                            <dd class="text-2xl md:text-3xl font-bold text-ocean">Weekly</dd>
+                        </div>
+                        <div class="col-span-2 md:col-span-1 md:border-l md:border-sage/30 md:pl-6 max-md:border-t max-md:border-sage/30 max-md:pt-6">
+                            <dt class="text-[0.65rem] font-semibold tracking-[0.2em] uppercase text-sage mb-1">We Do</dt>
+                            <dd class="text-2xl md:text-3xl font-bold text-ocean">Buy · Sell · Trade</dd>
+                        </div>
+                    </dl>
+
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a href="#visit" class="inline-flex items-center justify-center max-md:w-full px-7 py-3.5 bg-ocean text-sand font-semibold rounded-full hover:bg-gold hover:text-ocean transition-all duration-300 shadow-lg shadow-ocean/20">
+                            Plan Your Visit
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                        <a href="tel:+18058920943" class="inline-flex items-center justify-center max-md:w-full px-7 py-3.5 border-2 border-ocean/15 text-ocean font-semibold rounded-full hover:border-ocean transition-all duration-300 tabular-nums">
+                            (805) 892-0943
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- VISIT SECTION -->
+    <section id="visit" class="relative py-16 md:py-32 overflow-hidden bg-cover bg-center text-sand" style="background-image: url('images/state-street-pano.webp');" aria-label="710 State Street, Santa Barbara">
+        <div class="absolute inset-0 bg-ocean/45"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_70%_at_50%_60%,rgba(26,26,26,0.75),transparent)]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-ocean/80 via-transparent to-ocean/40"></div>
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+
+            <div class="text-center mb-16">
+                <p class="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-gold mb-4">Visit the Shop</p>
+                <h2 class="font-serif text-4xl md:text-6xl font-bold mb-6">Come Hang Out.</h2>
+                <p class="text-lg md:text-xl text-sand/85 font-light max-w-xl mx-auto">
+                    Bring something to trade, or just come browse the racks.
+                </p>
+            </div>
+
+            <!-- Mobile map (lazy-injected by script.js) -->
+            <div id="mobile-map" class="md:hidden mb-6 max-w-5xl mx-auto rounded-2xl overflow-hidden ring-1 ring-sand/20 shadow-xl shadow-ocean/40 aspect-[4/3] bg-ocean/60" data-map-src="https://www.google.com/maps?q=710+State+Street,+Santa+Barbara,+CA+93101&output=embed" aria-label="Map to 710 State Street"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
+
+                <!-- Location -->
+                <div class="group flex flex-col bg-ocean/70 backdrop-blur-md p-6 md:p-8 rounded-2xl ring-1 ring-sand/10 border border-sand/15 hover:border-gold/60 hover:-translate-y-1 active:border-gold/60 active:scale-[0.99] transition-all duration-300 shadow-xl shadow-ocean/40">
+                    <div class="flex items-center gap-2 text-gold mb-5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span class="text-xs font-semibold tracking-[0.25em] uppercase">Find Us</span>
+                    </div>
+                    <p class="text-2xl md:text-[1.75rem] font-bold leading-snug text-sand tracking-tight">
+                        710 State Street
+                    </p>
+                    <p class="mt-2 text-sand/65 font-light">
+                        Santa Barbara, CA 93101
+                    </p>
+                    <a href="tel:+18058920943" class="mt-1 text-sand/85 font-light tabular-nums tracking-wide hover:text-gold transition-colors">
+                        (805) 892-0943
+                    </a>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=710+State+Street,+Santa+Barbara,+CA+93101" target="_blank" rel="noopener noreferrer" class="mt-auto pt-6 inline-flex items-center gap-2 text-gold hover:text-sand transition-colors text-sm font-semibold tracking-[0.15em] uppercase">
+                        Get Directions
+                        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Hours -->
+                <div class="group flex flex-col bg-ocean/70 backdrop-blur-md p-6 md:p-8 rounded-2xl ring-1 ring-sand/10 border border-sand/15 hover:border-gold/60 hover:-translate-y-1 active:border-gold/60 active:scale-[0.99] transition-all duration-300 shadow-xl shadow-ocean/40">
+                    <div class="flex items-center gap-2 text-gold mb-5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span class="text-xs font-semibold tracking-[0.25em] uppercase">Open</span>
+                    </div>
+                    <ul class="space-y-3 text-sand">
+                        <li class="flex items-baseline justify-between gap-4 pb-3 border-b border-sand/10">
+                            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-sand/65">Sun – Thu</span>
+                            <span class="text-xl font-bold tabular-nums tracking-tight">11am – 8pm</span>
+                        </li>
+                        <li class="flex items-baseline justify-between gap-4">
+                            <span class="text-xs font-semibold tracking-[0.2em] uppercase text-sand/65">Fri – Sat</span>
+                            <span class="text-xl font-bold tabular-nums tracking-tight">11am – 9pm</span>
+                        </li>
+                    </ul>
+                    <a href="tel:+18058920943" class="mt-auto pt-6 inline-flex items-center gap-2 text-gold hover:text-sand transition-colors text-sm font-semibold tracking-[0.15em] uppercase">
+                        Call the Shop
+                        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Connect -->
+                <div class="group flex flex-col bg-ocean/70 backdrop-blur-md p-6 md:p-8 rounded-2xl ring-1 ring-sand/10 border border-sand/15 hover:border-gold/60 hover:-translate-y-1 active:border-gold/60 active:scale-[0.99] transition-all duration-300 shadow-xl shadow-ocean/40">
+                    <div class="flex items-center gap-2 text-gold mb-5">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        <span class="text-xs font-semibold tracking-[0.25em] uppercase">Follow</span>
+                    </div>
+                    <p class="text-2xl md:text-[1.75rem] font-bold leading-snug text-sand tracking-tight break-words">
+                        @thriftybeaches.sb
+                    </p>
+                    <p class="mt-2 text-sand/65 font-light">
+                        New drops &amp; behind-the-scenes hauls.
+                    </p>
+                    <a href="https://instagram.com/thriftybeaches.sb" target="_blank" rel="noopener noreferrer" class="mt-auto pt-6 inline-flex items-center gap-2 text-gold hover:text-sand transition-colors text-sm font-semibold tracking-[0.15em] uppercase">
+                        Open Instagram
+                        <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">&rarr;</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-ocean border-t border-sand/10 text-sand py-8 max-md:pb-24 text-center">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm font-light text-sand/60">
+                &copy; <span id="year"></span> Thrifty Beaches. All rights reserved.
+            </p>
+            <p class="text-sm font-light text-sand/60">
+                Sustainable style for the Central Coast.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom Action Bar (mobile-only) -->
+    <div class="mobile-action-bar md:hidden fixed bottom-0 inset-x-0 z-50 bg-ocean/95 backdrop-blur-xl backdrop-saturate-150 border-t border-gold/20 shadow-[0_-4px_24px_rgba(0,0,0,0.45)]">
+        <div class="grid grid-cols-3">
+            <a href="tel:+18058920943" aria-label="Call the shop" class="flex flex-col items-center justify-center gap-1 py-3 text-sand active:bg-gold/15 transition-colors">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.5a1 1 0 01.97.757l1 4a1 1 0 01-.27.95L7.5 10.5a11 11 0 006 6l1.793-1.7a1 1 0 01.95-.27l4 1a1 1 0 01.757.97V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span class="text-[0.6rem] font-semibold tracking-[0.2em] uppercase">Call</span>
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=710+State+Street,+Santa+Barbara,+CA+93101" target="_blank" rel="noopener noreferrer" aria-label="Get directions" class="flex flex-col items-center justify-center gap-1 py-3 text-sand active:bg-gold/15 transition-colors border-x border-sand/10">
+                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="text-[0.6rem] font-semibold tracking-[0.2em] uppercase">Directions</span>
+            </a>
+            <a href="https://instagram.com/thriftybeaches.sb" target="_blank" rel="noopener noreferrer" aria-label="Open Instagram" class="flex flex-col items-center justify-center gap-1 py-3 text-sand active:bg-gold/15 transition-colors">
+                <svg class="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span class="text-[0.6rem] font-semibold tracking-[0.2em] uppercase">Instagram</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
